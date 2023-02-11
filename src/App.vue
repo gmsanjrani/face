@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Face Detection</h1>
+    <video ref="video" autoplay style="display: none"></video>
+    <canvas ref="canvas" width="600px" height="400px"></canvas>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import setup from "./script"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+data() {
+    return {
+
+    }
+},
+methods: {
+
+},
+  mounted() {
+    setup(this.$refs.video, this.$refs.canvas)
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style lang="scss" scoped></style>
